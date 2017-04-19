@@ -677,6 +677,9 @@ local.templateApidocHtml = '\
                         .map(function (file) {
                             return file.replace(options.dir + '/', '');
                         })
+                        .filter(function (file) {
+                            return !(/^(?:\.git|node_modules|tmp)\b/).test(file);
+                        })
                 );
             });
             options.libFileList.some(function (file) {
