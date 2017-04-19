@@ -1,1 +1,39 @@
-{     "devDependencies": {         "zeroclipboard": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-zeroclipboard",     "homepage": "https://github.com/npmdoc/node-npmdoc-zeroclipboard",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-zeroclipboard.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [zeroclipboard (v2.3.0)](http://zeroclipboard.org/)  [![npm package](https://img.shields.io/npm/v/npmdoc-zeroclipboard.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-zeroclipboard) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-zeroclipboard.svg)](https://travis-ci.org/npmdoc/node-npmdoc-zeroclipboard)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha",
+        "zeroclipboard": "*"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-zeroclipboard",
+    "keywords": [
+        "documentation",
+        "zeroclipboard"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_zeroclipboard.js",
+    "name": "npmdoc-zeroclipboard",
+    "nameAlias": "npmdoc_zeroclipboard",
+    "nameOriginal": "npmdoc-zeroclipboard",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-zeroclipboard.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
